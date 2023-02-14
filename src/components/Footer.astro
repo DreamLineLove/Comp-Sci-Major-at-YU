@@ -2,13 +2,44 @@
 const today = new Date();
 ---
 
+<script>
+  const ScrollUpButton = document.getElementById("scroll-up-button");
+  ScrollUpButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
 <footer>
   &copy; {today.getFullYear()}
-  <a href="https://github.com/dreamlinelove" target="_blank">
+  <a href="https://github.com/DreamLineLove" target="_blank">
     <span>Zwe Nyan Zaw</span>. Developer, Student, Introvert :)</a
   >
 </footer>
+<button id="scroll-up-button"><img src="/arrow-up-solid.svg" /></button>
+
 <style>
+  #scroll-up-button {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+    background: cyan;
+  }
+  #scroll-up-button:focus {
+    background: pink;
+  }
+  @media (min-width: 500px) {
+    #scroll-up-button {
+      display: none;
+    }
+  }
   footer {
     margin-top: 40px;
     text-align: center;
