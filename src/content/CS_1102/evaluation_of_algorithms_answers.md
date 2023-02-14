@@ -26,9 +26,9 @@ heroImage: "/cs-image-1.jpg"
 
 3.  _Define evaluation by computational complexity._
     - (criterion for) Evaluating efficiency
-4.  Define evaluation by validity.
+4.  _Define evaluation by validity._
     - (criterion for) Evaluating reliability
-5.  Define evaluation by representation.
+5.  _Define evaluation by representation._
     - (criterion for) Evaluating elimination of redundancy and improving processing speed
 
 <br>
