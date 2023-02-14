@@ -1,50 +1,90 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_SUBTITLE, SITE_DESCRIPTION } from "../consts";
+import HeaderLink from "../components/HeaderLink.astro";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      #index-greeting {
+        font-size: 1.35rem;
+      }
+      @media (min-width: 350px) {
+        #index-greeting {
+          font-size: 1.5rem;
+        }
+      }
+      @media (min-width: 450px) {
+        #index-greeting {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <h1 id="index-greeting">🧑‍🎓 Hello, YU Student!</h1>
+      <p>
+        Welcome to the YU Computer Science study materials page. Here you will
+        find many examples, recall questions, past papers, answers, programs,
+        and much more! Although this is not an official page managed by the
+        department, I nevertheless hope that you will find these materials
+        useful.
+      </p>
+      <p>
+        To get started, please click the name of the module that you want to
+        study on the top nav bar. For example, if you want to study <HeaderLink>
+          CS 1102
+        </HeaderLink>, please click <HeaderLink href="/CS_1102">
+          CS 1102
+        </HeaderLink>
+        on the top nav bar.
+      </p>
+      <p>
+        Your feedback or suggestions are also welcome. My contact information is
+        given at the <HeaderLink href="/about">about</HeaderLink>
+        page. If you find any issue with the site or with any of the materials provided,
+        please feel free to reach out :)
+      </p>
+      <p>Thanks for visiting the page. Have a nice day!</p>
+      <!-- <ul>
+        <li>Edit this page in <code>src/pages/index.astro</code></li>
+        <li>
+          Edit the site header items in <code>src/components/Header.astro</code>
+        </li>
+        <li>
+          Add your name to the footer in <code>src/components/Footer.astro</code
+          >
+        </li>
+        <li>
+          Check out the included blog posts in <code>src/pages/blog/</code>
+        </li>
+        <li>
+          Customize the blog post page layout in <code
+            >src/layouts/BlogPost.astro</code
+          >
+        </li>
+      </ul>
+      <p>
+        Have fun! If you get stuck, remember to <a
+          href="https://docs.astro.build/"
+          >read the docs
+        </a> or <a href="https://astro.build/chat">join us on Discord</a> to ask
+        questions.
+      </p>
+      <p>
+        Looking for a blog template with a bit more personality? Check out <a
+          href="https://github.com/Charca/astro-blog-template"
+          >astro-blog-template
+        </a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
+      </p> -->
+    </main>
+    <Footer />
+  </body>
 </html>

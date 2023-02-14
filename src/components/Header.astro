@@ -1,25 +1,111 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE, SITE_SUBTITLE } from "../consts";
 ---
 
 <header>
-	<h2>
-		{SITE_TITLE}
-	</h2>
-	<nav>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink>
-		<HeaderLink href="https://github.com/withastro/astro" target="_blank">GitHub</HeaderLink>
-	</nav>
+  <!-- <h2> -->
+  <h6 id="site-title">
+    {SITE_TITLE}
+  </h6>
+  <h6 id="site-subtitle">{SITE_SUBTITLE}</h6>
+  <!-- </h2> -->
+  <nav>
+    <HeaderLink href="/">Home</HeaderLink>
+    <HeaderLink href="/CS_1102">CS 1102</HeaderLink>
+    <HeaderLink href="/about">About</HeaderLink>
+    <!-- <HeaderLink href="https://github.com/dreamlinelove" target="_blank">
+      GitHub
+    </HeaderLink> -->
+  </nav>
 </header>
 <style>
-	header {
-		margin: 0em 0 2em;
-	}
-	h2 {
-		margin: 0.5em 0;
-	}
+  header {
+    margin: 0em 0 2em;
+  }
+  /* h2 {
+    
+  } */
+  #site-subtitle {
+    background-image: url("/cs-image-1.jpg");
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 1.25rem;
+    margin-bottom: 0.25rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    font-family: monospace;
+    /* font-size: 5.5rem; */
+    text-align: center;
+    text-transform: uppercase;
+  }
+  #site-title {
+    margin-top: 0rem;
+    margin-bottom: -1rem;
+    /* text-transform: uppercase; */
+    font-size: 1.9rem;
+    /* -webkit-text-fill-color: #00ffff; */
+    /* background-color: rgb(0, 0, 0); */
+    /* background-image: url("https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; */
+    text-align: center;
+    font-family: serif;
+  }
+  @media (min-width: 305px) and (max-width: 340px) {
+    #site-title {
+      font-size: 1.35rem;
+    }
+    #site-subtitle {
+      margin-top: 1rem;
+      font-size: 3.5rem;
+    }
+  }
+  @media (min-width: 340px) and (max-width: 375px) {
+    #site-subtitle {
+      font-size: 4rem;
+    }
+    #site-title {
+      font-size: 1.5rem;
+    }
+  }
+  @media (min-width: 375px) and (max-width: 400px) {
+    #site-subtitle {
+      font-size: 4.5rem;
+    }
+    #site-title {
+      font-size: 1.75rem;
+    }
+  }
+  @media (min-width: 400px) and (max-width: 468px) {
+    #site-subtitle {
+      font-size: 4.75rem;
+    }
+    #site-title {
+      font-size: 1.85rem;
+    }
+  }
+  @media (min-width: 468px) and (max-width: 768px) {
+    #site-subtitle {
+      font-size: 5.75rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.25rem;
+    }
+  }
+  @media (min-width: 768px) {
+    #site-subtitle {
+      font-size: 4.5rem;
+      margin-top: 0.75rem;
+      margin-bottom: 0.25rem;
+    }
+  }
+  /* @media (min-width: 1024px) and (max-width: 2000px) {
+    #site-subtitle {
+      font-size: 6rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.25rem;
+    }
+  } */
 </style>

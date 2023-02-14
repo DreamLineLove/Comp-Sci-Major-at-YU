@@ -1,0 +1,27 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import BlogPost from "../../layouts/BlogPost.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("CS_1102");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+type Props = CollectionEntry<"CS_1102">;
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<BlogPost {...post.data} slug={post.slug}>
+  <!-- <h1>{post.data.title}</h1> -->
+  <!-- <div id="spacer"></div> -->
+  <Content />
+</BlogPost>
+<!-- <style>
+  #spacer {
+    margin: 3.5rem 0;
+  }
+</style> -->

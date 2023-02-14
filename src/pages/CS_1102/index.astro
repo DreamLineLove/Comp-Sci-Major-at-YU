@@ -1,0 +1,88 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("CS_1102"))
+  .filter((post) => post.data.answers === false)
+  .sort((a, b) => a.data.chapter - b.data.chapter);
+
+// const posts = (await getCollection("CS_1102")).sort(
+//   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+// );
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      ul {
+        list-style-type: none;
+        padding: unset;
+      }
+      ul li {
+        display: flex;
+      }
+      ul li time {
+        flex: 0 0 130px;
+        font-style: italic;
+        color: #595959;
+      }
+      ul li a:visited {
+        color: #8e32dc;
+      }
+      @media (max-width: 350px) {
+        .chapter-container {
+          margin-bottom: 1.5rem;
+        }
+      }
+      @media (max-width: 500px) {
+        .chapter-in-index {
+          flex-direction: column;
+        }
+        .chapter-in-index > .chapter-in-index-number {
+          font-size: 1.5rem;
+          margin-top: 0.5rem;
+        }
+      }
+      @media (min-width: 500px) {
+        .chapter-in-index > .chapter-in-index-number {
+          margin-left: 0.5rem;
+          font-size: 1.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section>
+        <ul>
+          {
+            posts.map((post) => (
+              <li
+                class="chapter-container"
+                style="display: flex; flex-direction: row; align-items: center; margin-top: 0rem; margin-bottom: -1.5rem; width: fit-content"
+              >
+                <h4
+                  class="chapter-in-index"
+                  style="margin-right: 2.25rem; font-family: monospace; font-size: 1.1rem; display: inline-flex; line-height: 1rem; margin-bottom: 1.5rem;"
+                >
+                  <span>Chapter</span>
+                  <span class="chapter-in-index-number">
+                    {post.data.pubDate ? post.data.pubDate : post.data.chapter}
+                  </span>
+                </h4>
+                <a href={`/CS_1102/${post.slug}/`}>{post.data.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
