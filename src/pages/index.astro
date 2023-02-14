@@ -31,28 +31,49 @@ import HeaderLink from "../components/HeaderLink.astro";
     <main>
       <h1 id="index-greeting">🧑‍🎓 Hello, YU Student!</h1>
       <p>
-        Welcome to the YU Computer Science study materials page. Here you will
-        find many examples, recall questions, past papers, answers, programs,
-        and much more! Although this is not an official page managed by the
-        department, I nevertheless hope that you will find these materials
-        useful.
+        Welcome to the YU Computer Science study materials page. <b
+          >Here you will find...</b
+        >
       </p>
+      <ul>
+        <li>✅ Useful examples</li>
+        <li>✅ Recall questions</li>
+        <li>✅ Past papers</li>
+        <li>✅ Answers</li>
+        <li>✅ Source files</li>
+        <li>✅ and much more!</li>
+      </ul>
+      <h3>To get started...</h3>
+      <ul>
+        <li>Click the module number in the top blue bar.</li>
+        <li>
+          For example, if you want to study <HeaderLink>CS 1102</HeaderLink>
+          please click <HeaderLink href="/CS_1102">CS 1102</HeaderLink>
+          on the top blue bar.
+        </li>
+      </ul>
+      <h3>Suggestions ✅</h3>
       <p>
-        To get started, please click the name of the module that you want to
-        study on the top nav bar. For example, if you want to study <HeaderLink>
-          CS 1102
-        </HeaderLink>, please click <HeaderLink href="/CS_1102">
-          CS 1102
+        Your feedback is welcome! My contact info is inside the <HeaderLink
+          href="/about"
+        >
+          about
         </HeaderLink>
-        on the top nav bar.
+        page. I will get back to you as soon as possible :)
       </p>
+      <h3>Issues ❌</h3>
       <p>
-        Your feedback or suggestions are also welcome. My contact information is
-        given at the <HeaderLink href="/about">about</HeaderLink>
-        page. If you find any issue with the site or with any of the materials provided,
-        please feel free to reach out :)
+        If you find any issue with the site or with any of the materials
+        provided, please feel free to reach out!
       </p>
-      <p>Thanks for visiting the page. Have a nice day!</p>
+      <h3>Disclaimer 🖐️</h3>
+      <i>
+        <p>
+          Although this is not an official site managed by the department, I
+          nevertheless hope that you will find these materials useful.
+        </p>
+      </i>
+      <p>Thanks for visiting the page. Have a nice day! 😄</p>
       <!-- <ul>
         <li>Edit this page in <code>src/pages/index.astro</code></li>
         <li>
