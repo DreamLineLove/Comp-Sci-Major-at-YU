@@ -39,7 +39,7 @@ const {
         position: fixed;
         bottom: 0;
         left: 0;
-        margin-left: 0.5rem;
+        margin-left: 0.65rem;
         margin-bottom: 0.5rem;
         height: fit-content;
         z-index: 1;
@@ -112,7 +112,9 @@ const {
           margin-bottom: 0.75rem;
         }
         .sub-info-answers {
-          -webkit-text-fill-color: #00ff3c;
+          /* -webkit-text-fill-color: #00ff3c; */
+          -webkit-text-fill-color: black;
+          background-color: #00ff3c;
           margin-top: -0.5rem;
         }
         .sub-info-objective {
@@ -197,12 +199,12 @@ const {
         slug.includes("_answers") ? (
           <button
             id="back-button-2"
-            style="height: auto; padding: 9px 12.5px; font-size: 1.2rem; font-family: monospace; border-radius: 13.5px; border-width: 0.1px; background-color: #aff564;"
+            style="height: auto; padding: 9px 12.5px; font-size: 1.35rem; font-family: monospace; border-radius: 13.5px; border-width: 0.1px; background-color: #aff564;"
           >
             Go Back
           </button>
         ) : (
-          <button style="height: auto; padding: 9px 12.5px; font-size: 1.2rem; font-family: monospace; border-radius: 13.5px; border-width: 0.1px; background-color: #aff564;">
+          <button style="height: auto; padding: 9px 12.5px; font-size: 1.35rem; font-family: monospace; border-radius: 13.5px; border-width: 0.1px; background-color: #aff564;">
             <a href={`/CS_1102/${slug}_answers/`}>Check Answers</a>
           </button>
         )

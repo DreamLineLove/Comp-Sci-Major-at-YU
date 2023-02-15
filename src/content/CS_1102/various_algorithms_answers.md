@@ -1,5 +1,5 @@
 ---
-title: "Various Algorithms objectives"
+title: "Various Algorithms"
 description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
 # pubDate: "Jul 01 2022"
 chapter: 2.2
@@ -9,7 +9,7 @@ long_response: false
 heroImage: "/cs-image-1.jpg"
 ---
 
-#### Quick Notice
+#### How to get started...
 
 <!-- > The following notes are for objectives. They are **_not_** for long-response-type questions! -->
 
