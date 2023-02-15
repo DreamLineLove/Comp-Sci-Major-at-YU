@@ -4,12 +4,18 @@ description: "Here is a sample of some basic Markdown syntax that can be used wh
 # pubDate: "Jul 01 2022"
 chapter: 2.2
 answers: false
+objective: true
+long_response: false
 heroImage: "/cs-image-1.jpg"
 ---
 
-#### Quick Notice
+#### How to get started...
 
-> The following notes are for objectives. They are **_not_** for long-response-type questions!
+<!-- > The following notes are for objectives. They are **_not_** for long-response-type questions! -->
+
+> 👉 Try answering each question by yourself.
+> <br>
+> 👉 If you don't know how to answer a question, click **Check Answers**.
 
 <br>
 

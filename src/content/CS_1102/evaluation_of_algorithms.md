@@ -4,13 +4,19 @@ description: "Here is a sample of some basic Markdown syntax that can be used wh
 # pubDate: "Jul 01 2022"
 chapter: 2.3
 answers: false
+objective: true
+long_response: true
 heroImage: "/cs-image-1.jpg"
 ---
 
-#### Quick Notice
+#### How to get started...
 
-> The following notes are **_general-purpose_**.
-> They may be examinable in both objective-type and long-response-type questions.
+<!-- > The following notes are **_general-purpose_**.
+> They may be examinable in both objective-type and long-response-type questions. -->
+
+> 👉 Try answering each question by yourself.
+> <br>
+> 👉 If you don't know how to answer a question, click **Check Answers**.
 
 <br>
 
@@ -35,8 +41,21 @@ heroImage: "/cs-image-1.jpg"
 
 ### (2) &nbsp;&nbsp; Computation example (p-84)
 
-1. What are the minimum, average, and maximum number of times of comparisons (best case, average case, worst case complexities) for linear search (sequential search) algorithm?
-2. What are the minimum, average, and maximum number of times of comparisons (best case, average case, worst case complexities) for binary search algorithm?
+<!-- 1. What are the minimum, average, and maximum number of times of comparisons (best case, average case, worst case complexities) for linear search (sequential search) algorithm?
+2. What are the minimum, average, and maximum number of times of comparisons (best case, average case, worst case complexities) for binary search algorithm? -->
+
+1. What is the minimum number of times of comparions for linear search (sequential search) algorithm?
+2. What is the best case time complexity for linear search (sequential search) algorithm?
+3. What is the average number of times of comparions for linear search (sequential search) algorithm?
+4. What is the average case time complexity for linear search (sequential search) algorithm?
+5. What is the maximum number of times of comparions for linear search (sequential search) algorithm?
+6. What is the worst case time complexity for linear search (sequential search) algorithm?
+7. What is the minimum number of times of comparions for binary search algorithm?
+8. What is the average case time complexity for binary search algorithm?
+9. What is the maximum number of times of comparions for binary search algorithm?
+10. What is the best case time complexity for binary search algorithm?
+11. What is the average number of times of comparions for binary search algorithm?
+12. What is the worst case time complexity for binary search algorithm?
 
 ## 2.3.2 &nbsp;&nbsp; Evaluation by validity (p-85)
 

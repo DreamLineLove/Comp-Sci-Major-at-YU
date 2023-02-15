@@ -1,16 +1,20 @@
 ---
-title: "Evaluation of Algorithms (answers)"
+title: "Evaluation of Algorithms"
 description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
 # pubDate: "Jul 01 2022"
 chapter: 2.3
 answers: true
+objective: true
+long_response: true
 heroImage: "/cs-image-1.jpg"
 ---
 
-#### Quick Notice
+#### How to get started...
 
-> The following notes are **_general-purpose_**.
-> They may be examinable in both objective-type and long-response-type questions.
+<!-- > The following notes are **_general-purpose_**.
+> They may be examinable in both objective-type and long-response-type questions. -->
+
+> ✅ When you are finished checking an answer, please click **Go Back**.
 
 <br>
 
@@ -52,14 +56,18 @@ heroImage: "/cs-image-1.jpg"
 
 ### (2) &nbsp;&nbsp; Computation example (p-84)
 
-1. _What are the minimum, average, and maximum number of times of comparisons (best case, average case, worst case complexities) for linear search (sequential search) algorithm?_
-   - O(1)
-   - O(n)
-   - O(n)
-2. _What are the minimum, average, and maximum number of times of comparisons (best case, average case, worst case complexities) for binary search algorithm?_
+1. _Linear search (sequential search) time complexity (number of comparisons)_
+   - _Best case/ minimum_ O(1)
+   - _Average case_ O(n)
+   - _Worst case/ maximum_ O(n)
+1. _Binary search time complexity (number of comparisons)_
+   - _Best case/ minimum_ O(n)
+   - _Average case_ O(n<sup>2</sup>)
+   - _Worst case/ maximum_ O(n<sup>2</sup>)
+   <!-- 2. _What are the minimum, average, and maximum number of times of comparisons (best case, average case, worst case complexities) for binary search algorithm?_
    - O(n)
    - O(n<sup>2</sup>)
-   - O(n<sup>2</sup>)
+   - O(n<sup>2</sup>) -->
 
 ## 2.3.2 &nbsp;&nbsp; Evaluation by validity (p-85)
 

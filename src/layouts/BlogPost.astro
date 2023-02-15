@@ -6,8 +6,18 @@ import Footer from "../components/Footer.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, chapter, updatedDate, heroImage, slug } =
-  Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  chapter,
+  updatedDate,
+  heroImage,
+  answers,
+  objective,
+  long_response,
+  slug,
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -32,6 +42,7 @@ const { title, description, pubDate, chapter, updatedDate, heroImage, slug } =
         margin-left: 1rem;
         margin-bottom: 1rem;
         height: 3rem;
+        z-index: 1;
         /* background: #aff564; */
       }
       .action-button-desktop {
@@ -43,19 +54,92 @@ const { title, description, pubDate, chapter, updatedDate, heroImage, slug } =
         font-family: monospace;
         /* -webkit-text-fill-color: white; */
       }
-      @media (min-width: 500px) {
+      @media (min-width: 668px) {
         #action-button {
           display: none;
         }
         .action-button-desktop {
           display: inline;
         }
+        .sub-info-container {
+          /* margin-top: 0.15rem;
+          margin-bottom: -0.35rem; */
+          font-family: monospace;
+          font-size: 1.25rem;
+          text-transform: uppercase;
+          display: block;
+          /* background-color: red; */
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          /* padding-bottom: -5rem; */
+          padding: -5rem;
+          margin-top: 1rem;
+          margin-bottom: -0.25rem;
+        }
+      }
+      .sub-info-title,
+      .sub-info-answers,
+      .sub-info-objective,
+      .sub-info-long {
+        display: inline;
+      }
+      .sub-info-answers {
+        -webkit-text-fill-color: rgb(0, 255, 255);
+        background-color: black;
+        padding: 2.5px 7.5px;
+        border-radius: 2.5px;
+      }
+      .sub-info-objective {
+        -webkit-text-fill-color: rgb(255, 0, 0);
+      }
+      .sub-info-long {
+        -webkit-text-fill-color: rgb(72, 0, 255);
+      }
+      @media (max-width: 668px) {
+        .sub-info-title,
+        .sub-info-answers,
+        .sub-info-objective,
+        .sub-info-long {
+          background-color: gray;
+          -webkit-text-fill-color: cyan;
+          border-radius: 10px;
+          display: inline-block;
+          padding: 0.5px 12.5px;
+          margin-bottom: 0.75rem;
+        }
+        .sub-info-answers {
+          -webkit-text-fill-color: #00ff3c;
+          margin-top: -0.5rem;
+        }
+        .sub-info-objective {
+          -webkit-text-fill-color: rgb(217, 255, 0);
+          margin-top: -0.5rem;
+        }
+        .sub-info-long {
+          -webkit-text-fill-color: rgb(255, 217, 244);
+          margin-top: -0.5rem;
+        }
+        .sub-info-container {
+          margin-top: -0.25rem;
+          margin-bottom: -0.75rem;
+          font-family: monospace;
+          font-size: 1.175rem;
+          text-transform: uppercase;
+          display: block;
+        }
       }
     </style>
   </head>
   <script>
-    const BackButton = document.getElementById("back-button");
-    BackButton.addEventListener("click", () => {
+    const BackButton1 = document.getElementById("back-button-1");
+    BackButton1.addEventListener("click", () => {
+      history.back();
+    });
+    const BackButton2 = document.getElementById("back-button-2");
+    BackButton2.addEventListener("click", () => {
       history.back();
     });
   </script>
@@ -69,40 +153,29 @@ const { title, description, pubDate, chapter, updatedDate, heroImage, slug } =
         {pubDate && <time>{pubDate}</time>}
         {
           chapter && (
-            <div style="width: full; display: flex; flex-direction: row; justify-content: space-between; padding-top: 1.5rem; margin-bottom: 1.75rem">
-              <h4 style="margin-top: 0.15rem; margin-bottom: -0.35rem; font-family: monospace; font-size: 1.25rem; text-transform: uppercase; display: inline">
-                Chapter {chapter}
-              </h4>
+            <div class="sub-info-container">
+              <div>
+                <h4 class="sub-info-title">Chapter {chapter}</h4>
+                {objective && <h4 class="sub-info-objective">Objectives</h4>}
+                {long_response && <h4 class="sub-info-long">Long Question</h4>}
+                {answers && <h4 class="sub-info-answers">Answers</h4>}
+              </div>
               {slug.includes("_answers") ? (
                 <button
                   class="action-button-desktop"
-                  id="back-button"
-                  style="padding-top: 0rem; padding-bottom: 0rem; margin-bottom: -0.75rem;"
+                  id="back-button-1"
+                  style="height: fit-content; padding: 10px;"
                 >
                   Go Back
                 </button>
               ) : (
                 <button
                   class="action-button-desktop"
-                  style="padding-top: 0rem; padding-bottom: 0rem; margin-bottom: -0.75rem;"
+                  style="height: fit-content; padding: 10px;"
                 >
                   <a href={`/CS_1102/${slug}_answers/`}>Check Answers</a>
                 </button>
               )}
-              <div id="action-button">
-                {slug.includes("_answers") ? (
-                  <button
-                    id="back-button"
-                    style="height: 100%; font-size: 1.35rem; font-family: monospace; border-radius: 13.5px; border-width: 0.1px; background-color: #aff564;"
-                  >
-                    Go Back
-                  </button>
-                ) : (
-                  <button style="height: 100%; font-size: 1.35rem; font-family: monospace; border-radius: 13.5px; border-width: 0.1px; background-color: #aff564;">
-                    <a href={`/CS_1102/${slug}_answers/`}>Check Answers</a>
-                  </button>
-                )}
-              </div>
             </div>
           )
         }
@@ -118,5 +191,21 @@ const { title, description, pubDate, chapter, updatedDate, heroImage, slug } =
       </article>
     </main>
     <Footer />
+    <div id="action-button">
+      {
+        slug.includes("_answers") ? (
+          <button
+            id="back-button-2"
+            style="height: 100%; font-size: 1.35rem; font-family: monospace; border-radius: 13.5px; border-width: 0.1px; background-color: #aff564;"
+          >
+            Go Back
+          </button>
+        ) : (
+          <button style="height: 100%; font-size: 1.35rem; font-family: monospace; border-radius: 13.5px; border-width: 0.1px; background-color: #aff564;">
+            <a href={`/CS_1102/${slug}_answers/`}>Check Answers</a>
+          </button>
+        )
+      }
+    </div>
   </body>
 </html>
