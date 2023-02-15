@@ -25,6 +25,15 @@ const { title, description, pubDate, chapter, updatedDate, heroImage, slug } =
       a {
         all: unset;
       }
+      #action-button {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+        height: 3rem;
+        /* background: #aff564; */
+      }
     </style>
   </head>
   <script>
@@ -47,18 +56,21 @@ const { title, description, pubDate, chapter, updatedDate, heroImage, slug } =
               <h4 style="margin-top: 0.15rem; margin-bottom: -0.35rem; font-family: monospace; font-size: 1.25rem; text-transform: uppercase; display: inline">
                 Chapter {chapter}
               </h4>
-              {slug.includes("_answers") ? (
-                <button
-                  id="back-button"
-                  style="padding-top: 0rem; padding-bottom: 0rem; margin-bottom: -0.75rem;"
-                >
-                  Go Back
-                </button>
-              ) : (
-                <button style="padding-top: 0rem; padding-bottom: 0rem; margin-bottom: -0.75rem;">
-                  <a href={`/CS_1102/${slug}_answers/`}>Check Answers</a>
-                </button>
-              )}
+
+              <div id="action-button">
+                {slug.includes("_answers") ? (
+                  <button
+                    id="back-button"
+                    style="height: 100%; font-size: 1.35rem; font-family: monospace; border-radius: 13.5px; border-width: 0.1px; background-color: #aff564;"
+                  >
+                    Go Back
+                  </button>
+                ) : (
+                  <button style="height: 100%; font-size: 1.35rem; font-family: monospace; border-radius: 13.5px; border-width: 0.1px; background-color: #aff564;">
+                    <a href={`/CS_1102/${slug}_answers/`}>Check Answers</a>
+                  </button>
+                )}
+              </div>
             </div>
           )
         }
@@ -74,5 +86,16 @@ const { title, description, pubDate, chapter, updatedDate, heroImage, slug } =
       </article>
     </main>
     <Footer />
-  </body>
+  </body><!-- {slug.includes("_answers") ? (
+                <button
+                  id="back-button"
+                  style="padding-top: 0rem; padding-bottom: 0rem; margin-bottom: -0.75rem;"
+                >
+                  Go Back
+                </button>
+              ) : (
+                <button style="padding-top: 0rem; padding-bottom: 0rem; margin-bottom: -0.75rem;">
+                  <a href={`/CS_1102/${slug}_answers/`}>Check Answers</a>
+                </button>
+              )} -->
 </html>

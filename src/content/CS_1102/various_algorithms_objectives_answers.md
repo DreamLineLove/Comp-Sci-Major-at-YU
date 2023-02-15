@@ -108,6 +108,8 @@ heroImage: "/cs-image-1.jpg"
 ### (2) &nbsp;&nbsp; Numerical integration (p-72)
 
 1. _What are two methods to find the solution of numerical integration?_
+   - Trapezoidal rule
+   - Simpson's method
 
 <br>
 
