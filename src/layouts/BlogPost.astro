@@ -39,10 +39,11 @@ const {
         position: fixed;
         bottom: 0;
         left: 0;
-        margin-left: 1rem;
-        margin-bottom: 1rem;
-        height: 3rem;
+        margin-left: 0.75rem;
+        margin-bottom: 0.75rem;
+        height: fit-content;
         z-index: 1;
+        /* padding: 0px; */
         /* background: #aff564; */
       }
       .action-button-desktop {
@@ -196,12 +197,12 @@ const {
         slug.includes("_answers") ? (
           <button
             id="back-button-2"
-            style="height: 100%; font-size: 1.35rem; font-family: monospace; border-radius: 13.5px; border-width: 0.1px; background-color: #aff564;"
+            style="height: auto; padding: 9px 12.5px; font-size: 1.2rem; font-family: monospace; border-radius: 13.5px; border-width: 0.1px; background-color: #aff564;"
           >
             Go Back
           </button>
         ) : (
-          <button style="height: 100%; font-size: 1.35rem; font-family: monospace; border-radius: 13.5px; border-width: 0.1px; background-color: #aff564;">
+          <button style="height: auto; padding: 9px 12.5px; font-size: 1.2rem; font-family: monospace; border-radius: 13.5px; border-width: 0.1px; background-color: #aff564;">
             <a href={`/CS_1102/${slug}_answers/`}>Check Answers</a>
           </button>
         )
