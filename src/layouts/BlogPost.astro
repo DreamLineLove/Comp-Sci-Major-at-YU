@@ -34,6 +34,23 @@ const { title, description, pubDate, chapter, updatedDate, heroImage, slug } =
         height: 3rem;
         /* background: #aff564; */
       }
+      .action-button-desktop {
+        display: none;
+        background-color: #aff564;
+        border-width: 0.1px;
+        border-radius: 10px;
+        font-size: 1.15rem;
+        font-family: monospace;
+        /* -webkit-text-fill-color: white; */
+      }
+      @media (min-width: 500px) {
+        #action-button {
+          display: none;
+        }
+        .action-button-desktop {
+          display: inline;
+        }
+      }
     </style>
   </head>
   <script>
@@ -56,7 +73,22 @@ const { title, description, pubDate, chapter, updatedDate, heroImage, slug } =
               <h4 style="margin-top: 0.15rem; margin-bottom: -0.35rem; font-family: monospace; font-size: 1.25rem; text-transform: uppercase; display: inline">
                 Chapter {chapter}
               </h4>
-
+              {slug.includes("_answers") ? (
+                <button
+                  class="action-button-desktop"
+                  id="back-button"
+                  style="padding-top: 0rem; padding-bottom: 0rem; margin-bottom: -0.75rem;"
+                >
+                  Go Back
+                </button>
+              ) : (
+                <button
+                  class="action-button-desktop"
+                  style="padding-top: 0rem; padding-bottom: 0rem; margin-bottom: -0.75rem;"
+                >
+                  <a href={`/CS_1102/${slug}_answers/`}>Check Answers</a>
+                </button>
+              )}
               <div id="action-button">
                 {slug.includes("_answers") ? (
                   <button
@@ -86,16 +118,5 @@ const { title, description, pubDate, chapter, updatedDate, heroImage, slug } =
       </article>
     </main>
     <Footer />
-  </body><!-- {slug.includes("_answers") ? (
-                <button
-                  id="back-button"
-                  style="padding-top: 0rem; padding-bottom: 0rem; margin-bottom: -0.75rem;"
-                >
-                  Go Back
-                </button>
-              ) : (
-                <button style="padding-top: 0rem; padding-bottom: 0rem; margin-bottom: -0.75rem;">
-                  <a href={`/CS_1102/${slug}_answers/`}>Check Answers</a>
-                </button>
-              )} -->
+  </body>
 </html>
