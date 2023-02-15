@@ -5,7 +5,7 @@ description: "Here is a sample of some basic Markdown syntax that can be used wh
 chapter: 2.2
 answers: false
 objective: true
-long_response: false
+long_response: true
 heroImage: "/cs-image-1.jpg"
 ---
 
@@ -16,6 +16,58 @@ heroImage: "/cs-image-1.jpg"
 > 👉 Try answering each question by yourself.
 > <br>
 > 👉 If you don't know how to answer a question, click **Check Answers**.
+
+<br>
+
+## 2.2.2 &nbsp;&nbsp; Sort Algorithm (p-32)
+
+1. What is ascending order sorting?
+2. What is descending order sorting?
+3. You can sort both (...) and (...).
+4. Why can also characters be sorted?
+5. What is internal sorting?
+6. What is external sorting?
+
+### (1) &nbsp;&nbsp; Basic exchange method (bubble sort) (p-33)
+
+1.  Explain basic exchange method.
+2.  Characteristics of bubble sort
+3.  Computational complexity of bubble sort
+
+### (2) &nbsp;&nbsp; Basic selection method (p-35)
+
+1. Explain basic selection method.
+2. Characteristics of basic selection method
+3. Computational complexity of basic selection method
+
+### (3) &nbsp;&nbsp; Basic insertion method (p-37)
+
+1. Explain basic insertion method.
+2. Characteristics of basic insertion method
+3. Computational complexity of basic insertion method
+
+### (4) &nbsp;&nbsp; Shaker sort method (p-39)
+
+1. Explain shaker sort method.
+2. Computational complexity of shaker sort method
+
+### (5) &nbsp;&nbsp; Shell sort method (p-40)
+
+1. Explain shell sort method.
+2. Characteristics of shell sort method
+3. Computational complexity of shell sort method
+
+### (6) &nbsp;&nbsp; Quick sort method (p-42)
+
+1. Explain quick sort method.
+2. Characteristics of quick sort method
+3. Computational complexity of quick sort method
+
+### (7) &nbsp;&nbsp; Merge sort method (p-44)
+
+1. Explain merge sort method.
+2. Characteristics of merge sort method
+3. Computational complexity of merge sort method
 
 <br>
 

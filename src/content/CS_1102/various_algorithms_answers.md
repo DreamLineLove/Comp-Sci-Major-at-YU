@@ -5,7 +5,7 @@ description: "Here is a sample of some basic Markdown syntax that can be used wh
 chapter: 2.2
 answers: true
 objective: true
-long_response: false
+long_response: true
 heroImage: "/cs-image-1.jpg"
 ---
 
@@ -100,11 +100,11 @@ heroImage: "/cs-image-1.jpg"
    - Newton's method
 2. _What kind of equations can bisection method solve?_
    - Higher-degree equations
-3. _Which of bisection method and Newton's method gives the simplest solutions?_
+3. _Which one gives the simplest solution, bisection method and Newton's method?_
    - Bisection method
-4. _Which of bisection method and Newton's method can obtain both real and imaginary solutions?_
+4. _Which one can obtain both real and imaginary solutions, bisection method and Newton's method?_
    - Newton's method
-5. _Which of bisection method and Newton's method gives only approximate solutions?_
+5. _Which one gives only approximate solutions, bisection method and Newton's method?_
    - Newton's method
 6. _What kind of equations can Newton's method solve?_
    - Higher-degree equations
