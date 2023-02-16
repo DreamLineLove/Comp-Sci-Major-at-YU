@@ -2,7 +2,9 @@
 title: "Various Algorithms"
 description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
 # pubDate: "Jul 01 2022"
-chapter: 2.2
+subtitle: "Chapter "
+subtitle_number: 2.2
+order: 2.2
 answers: true
 objective: true
 long_response: true

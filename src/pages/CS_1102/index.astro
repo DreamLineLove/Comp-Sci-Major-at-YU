@@ -7,7 +7,7 @@ import { getCollection } from "astro:content";
 
 const posts = (await getCollection("CS_1102"))
   .filter((post) => post.data.answers === false)
-  .sort((a, b) => a.data.chapter - b.data.chapter);
+  .sort((a, b) => a.data.order - b.data.order);
 
 // const posts = (await getCollection("CS_1102")).sort(
 //   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -35,21 +35,21 @@ const posts = (await getCollection("CS_1102"))
         color: #8e32dc;
       }
       @media (max-width: 350px) {
-        .chapter-container {
+        .sub-container {
           margin-bottom: 1.5rem;
         }
       }
       @media (max-width: 500px) {
-        .chapter-in-index {
+        .subtitle-in-index {
           flex-direction: column;
         }
-        .chapter-in-index > .chapter-in-index-number {
+        .subtitle-in-index > .subtitle-in-index-number {
           font-size: 1.5rem;
           margin-top: 0.5rem;
         }
       }
       @media (min-width: 500px) {
-        .chapter-in-index > .chapter-in-index-number {
+        .subtitle-in-index > .subtitle-in-index-number {
           margin-left: 0.5rem;
           font-size: 1.25rem;
         }
@@ -64,16 +64,20 @@ const posts = (await getCollection("CS_1102"))
           {
             posts.map((post) => (
               <li
-                class="chapter-container"
+                class="sub-container"
                 style="display: flex; flex-direction: row; align-items: center; margin-top: 0rem; margin-bottom: -1.5rem; width: fit-content"
               >
                 <h4
-                  class="chapter-in-index"
+                  class="subtitle-in-index"
                   style="margin-right: 2.25rem; font-family: monospace; font-size: 1.1rem; display: inline-flex; line-height: 1rem; margin-bottom: 1.5rem;"
                 >
-                  <span>Chapter</span>
-                  <span class="chapter-in-index-number">
-                    {post.data.pubDate ? post.data.pubDate : post.data.chapter}
+                  <span>
+                    {post.data.pubDate ? post.data.pubDate : post.data.subtitle}
+                  </span>
+                  <span class="subtitle-in-index-number">
+                    {post.data.pubDate
+                      ? post.data.pubDate
+                      : post.data.subtitle_number}
                   </span>
                 </h4>
                 <a href={`/CS_1102/${post.slug}/`}>{post.data.title}</a>

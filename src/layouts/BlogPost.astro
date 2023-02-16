@@ -10,7 +10,8 @@ const {
   title,
   description,
   pubDate,
-  chapter,
+  subtitle,
+  subtitle_number,
   updatedDate,
   heroImage,
   answers,
@@ -113,8 +114,9 @@ const {
         }
         .sub-info-answers {
           /* -webkit-text-fill-color: #00ff3c; */
-          -webkit-text-fill-color: black;
-          background-color: #00ff3c;
+          -webkit-text-fill-color: white;
+          background-color: red;
+          /* background-color: #00ff3c; */
           margin-top: -0.5rem;
         }
         .sub-info-objective {
@@ -155,10 +157,12 @@ const {
         <h1 class="title">{title}</h1>
         {pubDate && <time>{pubDate}</time>}
         {
-          chapter && (
+          subtitle && (
             <div class="sub-info-container">
               <div>
-                <h4 class="sub-info-title">Chapter {chapter}</h4>
+                <h4 class="sub-info-title">
+                  {subtitle} {subtitle_number}
+                </h4>
                 {objective && <h4 class="sub-info-objective">Objectives</h4>}
                 {long_response && <h4 class="sub-info-long">Long Question</h4>}
                 {answers && <h4 class="sub-info-answers">Answers</h4>}
