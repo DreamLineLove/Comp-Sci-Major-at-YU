@@ -34,9 +34,17 @@ const posts = (await getCollection("CS_1102"))
       ul li a:visited {
         color: #8e32dc;
       }
+      .subtitle-in-index {
+        min-width: 5rem;
+      }
       @media (max-width: 350px) {
         .sub-container {
           margin-bottom: 1.5rem;
+        }
+      }
+      @media (min-width: 350px) {
+        .subtitle-in-index {
+          min-width: 7rem;
         }
       }
       @media (max-width: 500px) {
@@ -52,6 +60,9 @@ const posts = (await getCollection("CS_1102"))
         .subtitle-in-index > .subtitle-in-index-number {
           margin-left: 0.5rem;
           font-size: 1.25rem;
+        }
+        .subtitle-in-index {
+          min-width: 8.5rem;
         }
       }
     </style>

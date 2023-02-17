@@ -17,6 +17,7 @@ const {
   answers,
   objective,
   long_response,
+  programming,
   slug,
 } = Astro.props;
 ---
@@ -85,7 +86,8 @@ const {
       .sub-info-title,
       .sub-info-answers,
       .sub-info-objective,
-      .sub-info-long {
+      .sub-info-long,
+      .sub-info-programming {
         display: inline;
       }
       .sub-info-answers {
@@ -100,11 +102,15 @@ const {
       .sub-info-long {
         -webkit-text-fill-color: rgb(72, 0, 255);
       }
+      .sub-info-programming {
+        -webkit-text-fill-color: rgb(247, 0, 255);
+      }
       @media (max-width: 668px) {
         .sub-info-title,
         .sub-info-answers,
         .sub-info-objective,
-        .sub-info-long {
+        .sub-info-long,
+        .sub-info-programming {
           background-color: gray;
           -webkit-text-fill-color: cyan;
           border-radius: 10px;
@@ -125,6 +131,10 @@ const {
         }
         .sub-info-long {
           -webkit-text-fill-color: rgb(255, 217, 244);
+          margin-top: -0.5rem;
+        }
+        .sub-info-programming {
+          -webkit-text-fill-color: rgb(0, 255, 140);
           margin-top: -0.5rem;
         }
         .sub-info-container {
@@ -165,6 +175,9 @@ const {
                 </h4>
                 {objective && <h4 class="sub-info-objective">Objectives</h4>}
                 {long_response && <h4 class="sub-info-long">Long Question</h4>}
+                {programming && (
+                  <h4 class="sub-info-programming">Programming</h4>
+                )}
                 {answers && <h4 class="sub-info-answers">Answers</h4>}
               </div>
               {slug.includes("_answers") ? (

@@ -1,14 +1,14 @@
 ---
-title: "Evaluation of Algorithms"
+title: "Algorithms"
 description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
 # pubDate: "Jul 01 2022"
-subtitle: "Chapter "
-subtitle_number: 2.3
-order: 3.2
-answers: true
+subtitle: "Paper   "
+subtitle_number: 1
+order: 4.1
+answers: false
 objective: true
 long_response: true
-programming: false
+programming: true
 heroImage: "/cs-image-1.jpg"
 ---
 
