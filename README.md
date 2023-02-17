@@ -6,4 +6,4 @@
 - ✅ Uses Astro framework under the hood
 - ✅ Uses MDX for content
 
-![Yangon University](https://www.yangongui.de/wp-content/uploads/IMG_9086_edit-1024x683.jpg)
+![Yangon University Convocation Hall](https://www.yangongui.de/wp-content/uploads/IMG_9086_edit-1024x683.jpg)

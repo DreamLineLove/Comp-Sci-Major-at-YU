@@ -1,8 +1,8 @@
 ---
-title: "Algorithms"
+title: "Algorithms, Flowcharts, Data Types, and Pseudocode"
 description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
 # pubDate: "Jul 01 2022"
-subtitle: "Paper   "
+subtitle: "Paper "
 subtitle_number: 1
 order: 4.1
 answers: false
@@ -17,70 +17,53 @@ heroImage: "/cs-image-1.jpg"
 <!-- > The following notes are **_general-purpose_**.
 > They may be examinable in both objective-type and long-response-type questions. -->
 
-> ✅ When you are finished checking an answer, please click **Go Back**.
+> 👉 Try answering each question by yourself.
+> <br>
+> 👉 If you don't know how to answer a question, click **Check Answers**.
 
 <br>
 
-1.  _How many algorithm evaluation criteria are there?_
+## Example (1) (p-37)
 
-    - Three
+> Design an algorithm and the corresponding flowchart for adding the test scores as given below:
 
-2.  _What are the three algorithm evaluation criteria?_
-
-    - Evaluation by computional complexity
-    - Evaluation by validity
-    - Evaluation by representation
-
-3.  _Define evaluation by computational complexity._
-    - (criterion for) Evaluating efficiency
-4.  _Define evaluation by validity._
-    - (criterion for) Evaluating reliability
-5.  _Define evaluation by representation._
-    - (criterion for) Evaluating elimination of redundancy and improving processing speed
+> - 62, 49, 98, 87, 62, 75
 
 <br>
 
 ## 2.3.1 &nbsp;&nbsp; Evaluation by computational complexity (p-84)
 
-1.  _What is computational complexity?_
-    - A measure for clarifying how much time and memory area a particular algorithm uses.
-2.  _How is computational complexity expressed?_
-    - In Big O notation
+1. What is computational complexity?
+2. How is computational complexity expressed?
 
 ### (1) &nbsp;&nbsp; Types of computational complexity (p-84)
 
-1. _What are the two types of computational complexity?_
-   - Space complexity
-   - Time complexity
-2. _Define time complexity._
-   - How much time an algorithm needs
-3. _Define space complexity._
-   - How much (memory space) area an algorithm needs
+1. What are the two types of computational complexity?
+2. Define time complexity.
+3. Define space complexity.
 
 ### (2) &nbsp;&nbsp; Computation example (p-84)
 
-1. _Linear search (sequential search) time complexity (number of comparisons)_
-   - _Best case/ minimum_ O(1)
-   - _Average case_ O(n)
-   - _Worst case/ maximum_ O(n)
-1. _Binary search time complexity (number of comparisons)_
-   - _Best case/ minimum_ O(n)
-   - _Average case_ O(n<sup>2</sup>)
-   - _Worst case/ maximum_ O(n<sup>2</sup>)
-   <!-- 2. _What are the minimum, average, and maximum number of times of comparisons (best case, average case, worst case complexities) for binary search algorithm?_
-   - O(n)
-   - O(n<sup>2</sup>)
-   - O(n<sup>2</sup>) -->
+<!-- 1. What are the minimum, average, and maximum number of times of comparisons (best case, average case, worst case complexities) for linear search (sequential search) algorithm?
+2. What are the minimum, average, and maximum number of times of comparisons (best case, average case, worst case complexities) for binary search algorithm? -->
+
+1. What is the minimum number of times of comparions for linear search (sequential search) algorithm?
+2. What is the best case time complexity for linear search (sequential search) algorithm?
+3. What is the average number of times of comparions for linear search (sequential search) algorithm?
+4. What is the average case time complexity for linear search (sequential search) algorithm?
+5. What is the maximum number of times of comparions for linear search (sequential search) algorithm?
+6. What is the worst case time complexity for linear search (sequential search) algorithm?
+7. What is the minimum number of times of comparions for binary search algorithm?
+8. What is the average case time complexity for binary search algorithm?
+9. What is the maximum number of times of comparions for binary search algorithm?
+10. What is the best case time complexity for binary search algorithm?
+11. What is the average number of times of comparions for binary search algorithm?
+12. What is the worst case time complexity for binary search algorithm?
 
 ## 2.3.2 &nbsp;&nbsp; Evaluation by validity (p-85)
 
-1. _Name and define the three types of validity?_
-   - Partial validity (whether segments satisfy specifications or not)
-   - Terminability validity (whether a program can terminate or not. Infinite loops must not occur)
-   - Total validity (whether the whole program satisfy specifications or not)
+1. Name and define the three types of validity?
 
 ## 2.3.3 &nbsp;&nbsp; Evaluation by representation (p-85)
 
-1. _Give two examples of evaluation by representation._
-   - Using functions for repeatedly executing steps
-   - Increasing the processing speed
+1. Give two examples of evaluation by representation.

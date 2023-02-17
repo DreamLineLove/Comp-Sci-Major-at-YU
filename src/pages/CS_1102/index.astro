@@ -39,7 +39,7 @@ const posts = (await getCollection("CS_1102"))
       }
       @media (max-width: 350px) {
         .sub-container {
-          margin-bottom: 1.5rem;
+          margin-bottom: 0.5rem;
         }
       }
       @media (min-width: 350px) {
@@ -64,6 +64,9 @@ const posts = (await getCollection("CS_1102"))
         .subtitle-in-index {
           min-width: 8.5rem;
         }
+        .sub-container {
+          margin-bottom: -0.5rem;
+        }
       }
     </style>
   </head>
@@ -76,7 +79,7 @@ const posts = (await getCollection("CS_1102"))
             posts.map((post) => (
               <li
                 class="sub-container"
-                style="display: flex; flex-direction: row; align-items: center; margin-top: 0rem; margin-bottom: -1.5rem; width: fit-content"
+                style="display: flex; flex-direction: row; align-items: center; margin-top: 0rem; width: fit-content"
               >
                 <h4
                   class="subtitle-in-index"
