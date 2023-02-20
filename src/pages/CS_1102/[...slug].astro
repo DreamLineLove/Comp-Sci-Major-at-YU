@@ -1,27 +1,13 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import { Article } from "../../components/Article";
+import { content_collection_cs_1102 } from "../../consts";
 import BlogPost from "../../layouts/BlogPost.astro";
-
-export async function getStaticPaths() {
-  const posts = await getCollection("CS_1102");
-  return posts.map((post) => ({
-    params: { slug: post.slug },
-    props: post,
-  }));
-}
-type Props = CollectionEntry<"CS_1102">;
-
-const post = Astro.props;
-const { Content } = await post.render();
+const pages = content_collection_cs_1102;
+const { slug } = Astro.params;
+const page = pages.find((page) => page.slug === slug);
+if (!page) return Astro.redirect("/404");
 ---
 
-<BlogPost {...post.data} slug={post.slug}>
-  <!-- <h1>{post.data.title}</h1> -->
-  <!-- <div id="spacer"></div> -->
-  <Content />
+<BlogPost {...page}>
+  <Article client:only content_collection={page.content_collection} />
 </BlogPost>
-<!-- <style>
-  #spacer {
-    margin: 3.5rem 0;
-  }
-</style> -->

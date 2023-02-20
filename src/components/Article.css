@@ -1,0 +1,15 @@
+.BigHeading {
+  margin-bottom: 1rem;
+  font-family: monospace;
+  font-size: 1.85rem;
+}
+
+.SmallHeading {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.UnorderedList {
+  list-style-type: "👉";
+  margin-bottom: 1.5rem;
+}
