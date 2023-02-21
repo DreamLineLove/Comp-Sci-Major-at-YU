@@ -81,7 +81,7 @@ export const content_collection_cs_1102 = [
             prompt: "How is computational complexity expressed?",
             prompt_number: 2,
             answer_type: "Paragraph",
-            answer: "In Big O notation",
+            answer: "In Big O Notation",
           },
         ],
       },
