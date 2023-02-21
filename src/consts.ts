@@ -54,6 +54,35 @@ export const content_collection_cs_1102 = [
             answer_type: "Paragraph",
             answer: "Criterion for evaluating reliability",
           },
+          {
+            prompt: "Define evaluation by representation.",
+            prompt_number: 5,
+            answer_type: "Paragraph",
+            answer:
+              "Criterion for evaluating elimination of redundancy and improving processing speed",
+          },
+        ],
+      },
+      {
+        type: "Small Heading",
+        text: "Evaluation by computational complexity",
+      },
+      {
+        type: "Data Collection",
+        data_collection: [
+          {
+            prompt: "What is computational complexity?",
+            prompt_number: 1,
+            answer_type: "Paragraph",
+            answer:
+              "A measure for clarifying how much time and memory area a particular algorithm uses.",
+          },
+          {
+            prompt: "How is computational complexity expressed?",
+            prompt_number: 2,
+            answer_type: "Paragraph",
+            answer: "In Big O notation",
+          },
         ],
       },
     ],
