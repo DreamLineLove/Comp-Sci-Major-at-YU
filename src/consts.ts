@@ -85,6 +85,33 @@ export const content_collection_cs_1102 = [
           },
         ],
       },
+      {
+        type: "Big Heading",
+        text: "Types of computational complexity",
+      },
+      {
+        type: "Data Collection",
+        data_collection: [
+          {
+            prompt: "What are the two types of computational complexity?",
+            prompt_number: 1,
+            answer_type: "Unordered List",
+            answer: ["Space complexity", "Time complexity"],
+          },
+          {
+            prompt: "Define time complexity.",
+            prompt_number: 2,
+            answer_type: "Paragraph",
+            answer: "How much time an algorithm needs",
+          },
+          {
+            prompt: "Define space complexity.",
+            prompt_number: 3,
+            answer_type: "Paragraph",
+            answer: "How much (memory space) area an algorithm needs",
+          },
+        ],
+      },
     ],
   },
 ];
