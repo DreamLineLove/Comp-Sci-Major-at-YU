@@ -1,24 +1,18 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
-type Props = CollectionEntry<"blog">["data"];
-
 const {
   title,
   description,
-  pubDate,
   subtitle,
   subtitle_number,
-  updatedDate,
   heroImage,
-  answers,
-  objective,
-  long_response,
-  programming,
-  slug,
+  isObjectiveQuestions,
+  isLongQuestions,
+  isProgrammingQuestions,
+  content_collection,
 } = Astro.props;
 ---
 
@@ -37,36 +31,10 @@ const {
       a {
         all: unset;
       }
-      #action-button {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        margin-left: 0.65rem;
-        margin-bottom: 0.5rem;
-        height: fit-content;
-        z-index: 1;
-        /* padding: 0px; */
-        /* background: #aff564; */
-      }
-      .action-button-desktop {
-        display: none;
-        background-color: #aff564;
-        border-width: 0.1px;
-        border-radius: 10px;
-        font-size: 1.15rem;
-        font-family: monospace;
-        /* -webkit-text-fill-color: white; */
-      }
       @media (min-width: 668px) {
-        #action-button {
-          display: none;
-        }
-        .action-button-desktop {
-          display: inline;
-        }
         .sub-info-container {
           /* margin-top: 0.15rem;
-          margin-bottom: -0.35rem; */
+            margin-bottom: -0.35rem; */
           font-family: monospace;
           font-size: 1.25rem;
           text-transform: uppercase;
@@ -84,17 +52,10 @@ const {
         }
       }
       .sub-info-title,
-      .sub-info-answers,
       .sub-info-objective,
       .sub-info-long,
       .sub-info-programming {
         display: inline;
-      }
-      .sub-info-answers {
-        -webkit-text-fill-color: rgb(0, 255, 255);
-        background-color: black;
-        padding: 2.5px 7.5px;
-        border-radius: 2.5px;
       }
       .sub-info-objective {
         -webkit-text-fill-color: rgb(255, 0, 0);
@@ -107,7 +68,6 @@ const {
       }
       @media (max-width: 668px) {
         .sub-info-title,
-        .sub-info-answers,
         .sub-info-objective,
         .sub-info-long,
         .sub-info-programming {
@@ -117,13 +77,6 @@ const {
           display: inline-block;
           padding: 0.5px 12.5px;
           margin-bottom: 0.75rem;
-        }
-        .sub-info-answers {
-          /* -webkit-text-fill-color: #00ff3c; */
-          -webkit-text-fill-color: white;
-          background-color: red;
-          /* background-color: #00ff3c; */
-          margin-top: -0.5rem;
         }
         .sub-info-objective {
           -webkit-text-fill-color: rgb(217, 255, 0);
@@ -148,16 +101,6 @@ const {
       }
     </style>
   </head>
-  <script>
-    const BackButton1 = document.getElementById("back-button-1");
-    BackButton1.addEventListener("click", () => {
-      history.back();
-    });
-    const BackButton2 = document.getElementById("back-button-2");
-    BackButton2.addEventListener("click", () => {
-      history.back();
-    });
-  </script>
 
   <body>
     <Header />
@@ -165,7 +108,6 @@ const {
       <article>
         {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
         <h1 class="title">{title}</h1>
-        {pubDate && <time>{pubDate}</time>}
         {
           subtitle && (
             <div class="sub-info-container">
@@ -173,59 +115,21 @@ const {
                 <h4 class="sub-info-title">
                   {subtitle} {subtitle_number}
                 </h4>
-                {objective && <h4 class="sub-info-objective">Objectives</h4>}
-                {long_response && <h4 class="sub-info-long">Long</h4>}
-                {programming && (
+                {isObjectiveQuestions && (
+                  <h4 class="sub-info-objective">Objectives</h4>
+                )}
+                {isLongQuestions && <h4 class="sub-info-long">Long-type</h4>}
+                {isProgrammingQuestions && (
                   <h4 class="sub-info-programming">Programming</h4>
                 )}
-                {answers && <h4 class="sub-info-answers">Answers</h4>}
               </div>
-              {slug.includes("_answers") ? (
-                <button
-                  class="action-button-desktop"
-                  id="back-button-1"
-                  style="height: fit-content; padding: 10px;"
-                >
-                  Go Back
-                </button>
-              ) : (
-                <button
-                  class="action-button-desktop"
-                  style="height: fit-content; padding: 10px;"
-                >
-                  <a href={`/CS_1102/${slug}_answers/`}>Check Answers</a>
-                </button>
-              )}
-            </div>
-          )
-        }
-        {
-          updatedDate && (
-            <div>
-              Last updated on <time>{updatedDate}</time>
             </div>
           )
         }
         <hr />
         <slot />
       </article>
+      <Footer />
     </main>
-    <Footer />
-    <div id="action-button">
-      {
-        slug.includes("_answers") ? (
-          <button
-            id="back-button-2"
-            style="height: auto; padding: 9px 12.5px; font-size: 1.35rem; font-family: monospace; border-radius: 13.5px; border-width: 0.1px; background-color: #aff564;"
-          >
-            Go Back
-          </button>
-        ) : (
-          <button style="height: auto; padding: 9px 12.5px; font-size: 1.35rem; font-family: monospace; border-radius: 13.5px; border-width: 0.1px; background-color: #aff564;">
-            <a href={`/CS_1102/${slug}_answers/`}>Check Answers</a>
-          </button>
-        )
-      }
-    </div>
   </body>
 </html>

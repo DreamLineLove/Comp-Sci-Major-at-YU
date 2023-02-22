@@ -2,16 +2,11 @@
 import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
-import { getCollection } from "astro:content";
-
-const posts = (await getCollection("CS_1102"))
-  .filter((post) => post.data.answers === false)
-  .sort((a, b) => a.data.order - b.data.order);
-
-// const posts = (await getCollection("CS_1102")).sort(
-//   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-// );
+import {
+  SITE_TITLE,
+  SITE_DESCRIPTION,
+  content_collection_cs_1102,
+} from "../../consts";
 ---
 
 <!DOCTYPE html>
@@ -76,27 +71,25 @@ const posts = (await getCollection("CS_1102"))
       <section>
         <ul>
           {
-            posts.map((post) => (
-              <li
-                class="sub-container"
-                style="display: flex; flex-direction: row; align-items: center; margin-top: 0rem; width: fit-content"
-              >
-                <h4
-                  class="subtitle-in-index"
-                  style="margin-right: 2.25rem; font-family: monospace; font-size: 1.1rem; display: inline-flex; line-height: 1rem; margin-bottom: 1.5rem;"
+            content_collection_cs_1102
+              .sort((a, b) => a.order - b.order)
+              .map((content) => (
+                <li
+                  class="sub-container"
+                  style="display: flex; flex-direction: row; align-items: center; margin-top: 0rem; width: fit-content"
                 >
-                  <span>
-                    {post.data.pubDate ? post.data.pubDate : post.data.subtitle}
-                  </span>
-                  <span class="subtitle-in-index-number">
-                    {post.data.pubDate
-                      ? post.data.pubDate
-                      : post.data.subtitle_number}
-                  </span>
-                </h4>
-                <a href={`/CS_1102/${post.slug}/`}>{post.data.title}</a>
-              </li>
-            ))
+                  <h4
+                    class="subtitle-in-index"
+                    style="margin-right: 2.25rem; font-family: monospace; font-size: 1.1rem; display: inline-flex; line-height: 1rem; margin-bottom: 1.5rem;"
+                  >
+                    <span>{content.subtitle}</span>
+                    <span class="subtitle-in-index-number">
+                      {content.subtitle_number}
+                    </span>
+                  </h4>
+                  <a href={`/CS_1102/${content.slug}/`}>{content.title}</a>
+                </li>
+              ))
           }
         </ul>
       </section>
